@@ -9,7 +9,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AmazonXPathDemo2 {
-	//XPath using starts-with option
+	
 	public static void main(String[] args) throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
@@ -18,7 +18,7 @@ public class AmazonXPathDemo2 {
 		driver.get("https://www.amazon.in/");
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("mobiles 5g",Keys.ENTER);
-		
+		//XPath using starts-with option
 	    List<WebElement> mobiles =driver.findElements(By.xpath("//h2[starts-with(@aria-label,'Samsung')]"));
 		System.out.println("All Samsung Mobiles  are:"+mobiles.size());
 		for(WebElement mobile : mobiles) {
@@ -36,3 +36,4 @@ public class AmazonXPathDemo2 {
 	}
 
 }
+
