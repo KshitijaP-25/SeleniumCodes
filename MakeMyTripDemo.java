@@ -15,7 +15,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class MakeMyTripDemo {
-	//Check-box, WindowHandles, Partial Screenshot
+	//Radio button, WindowHandles, Partial Screenshot
 	public static void main(String[] args) throws InterruptedException, IOException {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver = new ChromeDriver();
@@ -54,3 +54,4 @@ public class MakeMyTripDemo {
 	 	
 }
         
+
