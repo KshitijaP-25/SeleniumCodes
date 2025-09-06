@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -42,7 +41,7 @@ public class MakeMyTripDemo2 {
 		jse.executeScript("document.body.style.zoom='90%';");
 		
 		File srcFile = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
-		String fileTarget = "D:\\Goldy\\Selenium Practice\\FlipkartAssignment\\target\\Screenshots\\";
+		String fileTarget = "D:\\Goldy\\Selenium Practice\\WebAssignment\\target\\Screenshots\\";
 		FileUtils.copyFile(srcFile, new File(fileTarget+"MMTResult_"+timestamp()+".jpeg"));
 		Thread.sleep(2000);
 		driver.close();
@@ -51,3 +50,4 @@ public class MakeMyTripDemo2 {
 		return new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss").format(new Date());
 	   }
 }
+
