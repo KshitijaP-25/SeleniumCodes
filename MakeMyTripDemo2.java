@@ -33,6 +33,7 @@ public class MakeMyTripDemo2 {
 		WebElement Class = driver.findElement(By.xpath("//li[@data-cy='travelClass-1']"));		
 		System.out.println("Travel class is: "+Class.getText());	
 		Class.click();
+		Thread.sleep(1000);
 		driver.findElement(By.xpath("//button[@data-cy='travellerApplyBtn']")).click();
 		Thread.sleep(1000);
 		driver.findElement(By.xpath("//a[@class='primaryBtn font24 latoBold widgetSearchBtn ']")).click();
@@ -50,4 +51,5 @@ public class MakeMyTripDemo2 {
 		return new SimpleDateFormat("yyyy-MM-dd_hh-mm-ss").format(new Date());
 	   }
 }
+
 
