@@ -53,8 +53,8 @@ public class FramesDemo {
 		System.out.println("Opened TestNG Tutorials in new tab");
 		Thread.sleep(5000);
 		//Switching to parent window
-		Object[] windowHandles = driver.getWindowHandles().toArray();
-		driver.switchTo().window((String)windowHandles[0]);
+		String windowHandle = driver.getWindowHandle();
+		driver.switchTo().window(windowHandle);
 		
 		//Switching to Frame 3
 	    Thread.sleep(1000);
@@ -74,3 +74,4 @@ public class FramesDemo {
 	}
 
 }
+
