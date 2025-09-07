@@ -14,13 +14,15 @@ public class GTagDemo {
 		WebDriver driver =  new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.get("https://www.worldometers.info/coronavirus/country/india/");
-		
+		String GraphHeading = driver.findElement(By.xpath("//h3[text()='Total Coronavirus Cases in India']")).getText();
+		System.out.println(GraphHeading);
 		Thread.sleep(2000);
 		List<WebElement> points = driver.findElements(By.xpath("(//*[local-name() ='g' and @class='highcharts-axis-labels highcharts-xaxis-labels'])[2]//*[name()='tspan']"));
 		for(WebElement point : points) {
 		System.out.println(point.getText());
 		}
 		
+		System.out.println("Graph Points are:");
 		Thread.sleep(2000);
 		WebElement graphPoint = driver.findElement(By.xpath("//*[local-name()='g' and @class='highcharts-markers highcharts-series-0 highcharts-line-series highcharts-tracker']//*[name()='path'][2]"));
 		Actions action = new Actions(driver);
@@ -33,3 +35,4 @@ public class GTagDemo {
 	}
 
 }
+
