@@ -18,13 +18,13 @@ public class SelectDemo {
 		driver.manage().window().maximize();
 		driver.get("https://www.facebook.com/r.php?entry_point=login");
 	
-		WebElement monthDD = driver.findElement(By.xpath("//select[@aria-label=\"Month\"]"));
+		WebElement monthDD = driver.findElement(By.xpath("//select[@aria-label='Month']"));
 		monthDD.click();
 		System.out.println("Months are as follows:");
 		Select select1 = new Select(monthDD);
 		System.out.println("First selected Month is: "+select1.getFirstSelectedOption().getText());
 		Thread.sleep(500);
-		select1.selectByValue("10");
+		select1.selectByValue("1");
 		System.out.println("Later selected Month is: "+select1.getFirstSelectedOption().getText());
 		List <WebElement> monthoptions = select1.getOptions();
 		for(WebElement option : monthoptions) {
@@ -37,7 +37,7 @@ public class SelectDemo {
 		Select select2 = new Select(yearDD);
 		System.out.println("First selected Year is: "+select2.getFirstSelectedOption().getText());
 		Thread.sleep(500);
-		select2.selectByVisibleText("2018");
+		select2.selectByVisibleText("2008");
 		System.out.println("Later selected Year is: "+select2.getFirstSelectedOption().getText());
 		List <WebElement> yearoptions = select2.getOptions();
 		for(WebElement option : yearoptions) {
@@ -47,3 +47,4 @@ public class SelectDemo {
 	}
 
 }
+
