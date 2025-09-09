@@ -34,8 +34,9 @@ public class HorizontalScroll_WebTable {
 		System.out.println(target2.getText());
 		
 		Thread.sleep(2000);
-		//driver.close();
+		driver.close();
 		
 	}
 
 }
+
