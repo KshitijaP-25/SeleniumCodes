@@ -25,7 +25,9 @@ public class BrokenImageDemo {
 		else {
 			System.out.println(image.getAttribute("src")+" ---> Image is not Broken"+" : "+image.getAttribute("naturalWidth"));
 		}
-
+		Thread.sleep(3000);
+	    driver.close();
 	}
 
 }
+
