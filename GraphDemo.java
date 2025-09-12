@@ -19,12 +19,11 @@ public static void main(String[] args) throws InterruptedException {
 	String GraphHeading = driver.findElement(By.xpath("//h3[text()='Total Coronavirus Cases in India']")).getText();
 	
 	List<WebElement> points = driver.findElements(By.xpath("(//*[local-name() ='g' and @class='highcharts-axis-labels highcharts-xaxis-labels'])[2]//*[name()='tspan']"));
-		System.out.println(GraphHeading +": "+points.size());
+	System.out.println(GraphHeading +": "+points.size());
 		for(WebElement point : points) {
 			  System.out.println(point.getText());
 			}
-		Thread.sleep(1000);
-	
+	Thread.sleep(1000);
 	List<WebElement> graphPoints = driver.findElements(By.xpath("//div[@id='coronavirus-cases-linear']//*[@class='highcharts-grid highcharts-xaxis-grid']//*[name()='path']"));
 	System.out.println("Total Graph Points are: "+graphPoints.size());
 	String textXPath ="//*[@class='highcharts-label highcharts-tooltip highcharts-color-undefined']";
@@ -37,11 +36,11 @@ public static void main(String[] args) throws InterruptedException {
 			}
 			catch(Exception e) {}
 		}
-		
-	//System.out.println(driver.findElement(By.xpath("//*[@class='highcharts-label highcharts-tooltip highcharts-color-undefined']")).getText());	
-		
+	Thread.sleep(6000);
+	driver.close();
    }
 }
 		
 		
+
 	
