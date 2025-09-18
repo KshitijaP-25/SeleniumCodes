@@ -3,6 +3,7 @@ import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -18,32 +19,32 @@ public class SliderDemo {
 		driver.manage().window().maximize();
 		driver.get("https://www.flipkart.com/");
 		
-		driver.findElement(By.xpath("//a[@aria-label='Mobiles & Tablets']")).click();
+		driver.findElement(By.name("q")).sendKeys("mobiles",Keys.ENTER);
 		WebElement Oppo = driver.findElement(By.xpath("//div[@class='_6i1qKy' and contains(text(),'OPPO')]"));
 		Thread.sleep(1000);
 		Oppo.click();
 		Thread.sleep(1000);
-		WebElement startSlider = driver.findElement(By.xpath("//div[@class='iToJ4v Kaqq1s']"));
-		WebElement endSlider = driver.findElement(By.xpath("//div[@class='iToJ4v D0puJn']"));
-		
 		Actions action = new Actions(driver);
-		Thread.sleep(1000);
+		Thread.sleep(800);
+		WebElement startSlider = driver.findElement(By.xpath("//div[@class='iToJ4v Kaqq1s']"));
 		action.dragAndDropBy(startSlider, 50, 0).perform();
-		Thread.sleep(1500);
+		Thread.sleep(800);
+		WebElement endSlider = driver.findElement(By.xpath("//div[@class='iToJ4v D0puJn']"));
 		action.dragAndDropBy(endSlider, -50, 0).perform();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		WebElement selectedRange = driver.findElement(By.xpath("//div[@class='_6tw8ju' and contains(text(),'₹')]"));
+		Thread.sleep(500);
 		System.out.println("Selected Price Range is: "+selectedRange.getText());
-		
+		Thread.sleep(1000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
-		jse.executeScript("window.scrollBy(0,1200);");
+		jse.executeScript("window.scrollBy(0,600);");
 		//Finding BesterSeller Mobiles using xpath axes
-		List<WebElement> BestSellers = driver.findElements(By.xpath("//div[@class='UzRoYO CmflSf']//parent::div//following-sibling::div[2]//div//div[@class='KzDlHZ']"));
 		System.out.println("BestSeller Mobiles in Selected Price range are:");
-		for(WebElement BestSeller : BestSellers) {
+		List<WebElement> BestSellers = driver.findElements(By.xpath("//div[@class='UzRoYO CmflSf']//parent::div//following-sibling::div[2]//div//div[@class='KzDlHZ']"));
+		System.out.println(BestSellers.size());
+		 for(WebElement BestSeller : BestSellers) {
 			System.out.println(BestSeller.getText());
-		}
-		
+		  }
 		Thread.sleep(3000);
 		driver.close();
 	}
