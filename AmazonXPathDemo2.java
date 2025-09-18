@@ -6,6 +6,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class AmazonXPathDemo2 {
@@ -16,7 +17,10 @@ public class AmazonXPathDemo2 {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
 		driver.get("https://www.amazon.in/");
-		Thread.sleep(1000);
+		try {
+			driver.findElement(By.xpath("//button[@type='submit']")).click();
+		}
+		catch(Exception e) {}
 		driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("mobiles 5g",Keys.ENTER);
 		//XPath using starts-with option
 	    List<WebElement> mobiles =driver.findElements(By.xpath("//h2[starts-with(@aria-label,'Samsung')]"));
@@ -31,9 +35,9 @@ public class AmazonXPathDemo2 {
 		for(WebElement mobile : mobiles1) {
 		System.out.println(mobile.getText());
 		} 
+	
 		Thread.sleep(2000);
 		driver.close();
 	}
 
 }
-
