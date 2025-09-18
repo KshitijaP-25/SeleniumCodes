@@ -16,12 +16,10 @@ public class AmazonListOfElements {
 		driver.manage().window().maximize();
 		driver.get("https://www.amazon.in/");
 		try {
-		    driver.findElement(By.xpath("//button[@alt='Continue shopping']")).click();
+			driver.findElement(By.xpath("//button[@type='submit']")).click();
 		}
-		catch(Exception e){
-			driver.findElement(By.xpath("//img[@alt='Refrigerators']")).click();
-		}
-		
+		catch(Exception e) {}
+	    driver.findElement(By.xpath("//img[@alt='Refrigerators']")).click();
 	    List<WebElement> products =driver.findElements(By.xpath("//span[contains(text(),'Refrigerator')]"));
 		System.out.println("All Refrigerator on Amazon Searchpage are:"+products.size());
 		for(WebElement product : products) {
