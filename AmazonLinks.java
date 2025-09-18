@@ -22,14 +22,15 @@ public class AmazonLinks {
 			System.out.println("Amazon Homepage is Opened..");
 		}
 	    List<WebElement> links =driver.findElements(By.tagName("a"));
-		System.out.println("All image URLs on Amazon Homepage are:"+links.size());
+		System.out.println("All Links on Amazon Homepage are:"+links.size());
 		for(WebElement link : links) {
 		String Link = link.getDomAttribute("href");
 		System.out.println(Link +" : "+link.getText());
+		
 		} 
+		
 		Thread.sleep(2000);
 		driver.close();
 	}
 
 }
-
