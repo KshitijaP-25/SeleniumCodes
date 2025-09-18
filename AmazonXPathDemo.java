@@ -16,6 +16,10 @@ public class AmazonXPathDemo {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().window().maximize();
 		driver.get("https://www.amazon.in");
+		try {
+			driver.findElement(By.xpath("//button[@type='submit']")).click();
+		}
+		catch(Exception e) {}
 	    driver.findElement(By.xpath("//a[@aria-label='Cushion covers, bedsheets & more']")).click();
 	    
 	    //xpath for Bathroom Linen using text()
