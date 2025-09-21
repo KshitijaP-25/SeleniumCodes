@@ -19,16 +19,20 @@ public class Resizable {
 		
 		WebElement frame = driver.findElement(By.xpath("//iframe[@class='demo-frame']"));
 		driver.switchTo().frame(frame);
-		WebElement Textbox1 = driver.findElement(By.xpath("//div[@id='resizable']//div[3]"));
-		System.out.println("Original Location of Textbox1:"+Textbox1.getLocation());
-		System.out.println("X point of Textbox1:"+Textbox1.getLocation().getX());
-		System.out.println("Y point of Textbox1:"+Textbox1.getLocation().getY());
+		WebElement Point = driver.findElement(By.xpath("//div[@id='resizable']//div[3]"));
+		WebElement Textbox = driver.findElement(By.xpath("//div[@class='ui-widget-content ui-resizable']"));
+		System.out.println("Original Location of Textbox1:"+Point.getLocation());
+		System.out.println("X point of Textbox1:"+Point.getLocation().getX());
+		System.out.println("Y point of Textbox1:"+Point.getLocation().getY());
+		System.out.println("Original Size of Textbox:"+Textbox.getSize());
+		System.out.println("--------------------------------------------------------------------");
 		
 		Actions action = new Actions(driver);
-		action.dragAndDropBy(Textbox1, 152, 72).perform();
-		System.out.println("New Location of Textbox1:"+Textbox1.getLocation());
-		System.out.println("New X point of Textbox1:"+Textbox1.getLocation().getX());
-		System.out.println("New Y point of Textbox1:"+Textbox1.getLocation().getY());
+		action.dragAndDropBy(Point, 152, 72).perform();
+		System.out.println("New Location of Textbox1:"+Point.getLocation());
+		System.out.println("New X point of Textbox1:"+Point.getLocation().getX());
+		System.out.println("New Y point of Textbox1:"+Point.getLocation().getY());
+		System.out.println("New Size of Textbox:"+Textbox.getSize());
 		
 		Thread.sleep(2000);
 		driver.close();
