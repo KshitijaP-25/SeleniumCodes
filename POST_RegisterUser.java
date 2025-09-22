@@ -7,6 +7,7 @@ import io.restassured.specification.RequestSpecification;
 
 public class POST_RegisterUser {
 
+	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		
 		System.out.println("This is API Testing for POST Method");
@@ -16,6 +17,8 @@ public class POST_RegisterUser {
 		JSONObject requestParam = new JSONObject();
 		requestParam.put("email", "eve.holt@reqres.in");
 		requestParam.put("password","pistol");
+		requestParam.put("fname", "John");
+		requestParam.put("lname", "Terrence");
 		
 		https.header("Content-Type", "application/json");
 		https.header("x-api-key","reqres-free-v1");
