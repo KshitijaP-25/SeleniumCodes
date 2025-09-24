@@ -15,7 +15,7 @@ public class HeaderFooterLinks {
 		driver.manage().window().maximize();
 		driver.get("https://www.tutorialspoint.com");
 		
-		List<WebElement> options = driver.findElements(By.cssSelector(".library-nav__slider>ul>li>a"));
+		List<WebElement> options = driver.findElements(By.cssSelector(".accent-nav__content>ul>li"));
 		System.out.println("Total options in the Header are: "+options.size());
 		Thread.sleep(500);
 		for(int i=0;i<options.size();i++) {
@@ -31,3 +31,4 @@ public class HeaderFooterLinks {
 		driver.close();
 	}
 }
+
