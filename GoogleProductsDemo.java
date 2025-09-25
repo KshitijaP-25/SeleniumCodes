@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class GoogleProductsDemo {
-
+   //List of Google Product, fetching Favicon icon URL
 	public static void main(String[] args) throws InterruptedException {
 		WebDriverManager.chromedriver().setup();
 		WebDriver driver =  new ChromeDriver();
@@ -21,9 +21,12 @@ public class GoogleProductsDemo {
 			String productName = product.getDomAttribute("alt");
 			System.out.println(productName);
 		}
-		
 		Thread.sleep(1000);
-		//driver.close();
+		driver.get("https://www.google.com/imghp?hl=en&tab=ri&authuser=0&ogbl");
+		WebElement Favicon = driver.findElement(By.xpath("//link[@rel='icon']"));
+		System.out.println("Favicon icon URL of Google: "+Favicon.getAttribute("href"));
+		Thread.sleep(4000);
+		driver.close();
 
 	}
 
