@@ -25,6 +25,8 @@ public class Resizable {
 		System.out.println("X point of Textbox1:"+Point.getLocation().getX());
 		System.out.println("Y point of Textbox1:"+Point.getLocation().getY());
 		System.out.println("Original Size of Textbox:"+Textbox.getSize());
+		System.out.println("Height of Textbox: "+Textbox.getSize().getHeight());
+		System.out.println("Width of Textbox: "+Textbox.getSize().getWidth());
 		System.out.println("--------------------------------------------------------------------");
 		
 		Actions action = new Actions(driver);
@@ -33,7 +35,8 @@ public class Resizable {
 		System.out.println("New X point of Textbox1:"+Point.getLocation().getX());
 		System.out.println("New Y point of Textbox1:"+Point.getLocation().getY());
 		System.out.println("New Size of Textbox:"+Textbox.getSize());
-		
+		System.out.println("New Height of Textbox: "+Textbox.getSize().getHeight());
+		System.out.println("New Width of Textbox: "+Textbox.getSize().getWidth());
 		Thread.sleep(2000);
 		driver.close();
 	}
