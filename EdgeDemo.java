@@ -13,10 +13,11 @@ public class EdgeDemo {
 	
 	public static void main(String[] args) throws InterruptedException, IOException {
 		//Edge Zoom-in, zoom-out
-		WebDriver driver = new EdgeDriver();
+		System.setProperty("webdriver.edge.driver","C:\\Users\\sai\\Downloads\\msedgedriver.exe");
+	    WebDriver driver = new EdgeDriver();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		driver.manage().window().maximize();
-		driver.get("https://www.goindigo.in/");
+		driver.get("https://www.goindigo.in/"); 
 		System.out.println("Edge browser is launched...");
 		Thread.sleep(2000);
 		JavascriptExecutor jse = (JavascriptExecutor)driver;
@@ -31,6 +32,7 @@ public class EdgeDemo {
 		for(WebElement city : cities) {
 		 System.out.println(city.getText());
 		}
+		Thread.sleep(2000);
 	    driver.close();
 	}
 
