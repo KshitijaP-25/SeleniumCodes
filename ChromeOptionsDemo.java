@@ -11,11 +11,11 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class ChromeOptionsDemo {
 
 	public static void main(String[] args) throws InterruptedException {
-		//Disable Infobar
+		//Disable Infobar, incognito mode
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions option = new ChromeOptions();
 		option.setExperimentalOption("excludeSwitches",Arrays.asList("enable-automation","disable-infobar"));
-		
+		option.addArguments("--incognito");
 		WebDriver driver = new ChromeDriver(option);
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		driver.manage().window().maximize();

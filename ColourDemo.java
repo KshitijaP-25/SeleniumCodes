@@ -20,11 +20,13 @@ public class ColourDemo {
 		driver.findElement(By.id("CybotCookiebotDialogBodyButtonDecline")).click();
 		List<WebElement> sections = driver.findElements(By.xpath("//div[@class='rmwidget widget-button']"));
 		Actions action = new Actions(driver);
-		System.out.println("Available sections are:"+sections.size());
+		System.out.println("Available sections are: "+sections.size()+"\n");
 		for(WebElement section : sections) {
 			action.moveToElement(section).perform();
 			Thread.sleep(300);
 			System.out.println(section.getText() + ": "+ section.getCssValue("color"));
+			System.out.println(section.getCssValue("font-size")+", "+section.getCssValue("background-color")+", "+section.getCssValue("border"));
+			System.out.println(" ");
 		}	
 		driver.close();
 	}
