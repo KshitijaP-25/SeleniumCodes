@@ -10,7 +10,7 @@ public class POST_AddUser {
 	@SuppressWarnings("unchecked")
 	public static void main(String[] args) {
 		
-		System.out.println("This is API Testing for POST Method - Add User");
+		System.out.println("This is API Testing for POST Method - Add Object");
 		
 		RestAssured.baseURI = "https://api.restful-api.dev/objects";
 		RequestSpecification https = RestAssured.given();
@@ -33,11 +33,12 @@ public class POST_AddUser {
 		
 		Response response = https.post(); 
 		System.out.println("The status received: " + response.statusLine());
-		System.out.println(response.getBody().asString());
+		System.out.println(response.prettyPrint());
 		System.out.println(response.getStatusCode());
 		System.out.println(response.getContentType());
 		System.out.println(response.getTime());
 	}
  
 }
+
 
